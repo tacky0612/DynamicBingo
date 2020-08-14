@@ -1,0 +1,30 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+::selection {
+  background: none;
+}
+
+#main-inner {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  min-width: 700px;
+}
+
+table {
+  margin: auto;
+}
+
+th,
+td {
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: aquamarine;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+/*# sourceMappingURL=styles.css.map */
