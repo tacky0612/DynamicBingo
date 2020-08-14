@@ -50,6 +50,34 @@ function renderBingo(number, source) {
     }
 }
 
+function checkBingo() {
+    let colCount = new Array(number).fill(0);
+    let rowCount = 0;
+    let slashCount = 0
+    let backslashCount = 0
+    for (let row = 0; row < number; row++) {
+        rowCount = 0;
+        for (let col = 0; col < number; col++) {
+            let color = $("." + `${row}-${col}`).css("background-color");
+            if (color === "rgb(255, 192, 203)" || color === "rgb(255, 150, 150)") {
+                rowCount++;
+                colCount[col]++;
+                if (row === col) {
+                    slashCount++;
+                }
+
+                if (row === number - 1 - col) {
+                    backslashCount++;;
+                }
+            }
+        }
+    }
+    if (rowCount === number || colCount.includes(number) || slashCount === number || backslashCount === number) {
+        alert("BINGO!!");
+    }
+    console.log(colCount);
+}
+
 $("#bingo-range").on("input", () => {
     let input = $("#bingo-range").val();
     $("#output").text(input);
@@ -70,6 +98,6 @@ $("td").on("click", (event) => {
     } else if (color === "rgb(255, 192, 203)") {
         $("." + target).css("background-color", "aquamarine");
     }
-    console.log(event.target);
-    console.log(color);
+
+    checkBingo();
 });
