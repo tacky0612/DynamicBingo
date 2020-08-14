@@ -1,6 +1,6 @@
 # DynamicBingo
 
-Currently in production…. 
+Currently in production….  
 こちらからゲームが遊べます。  
 [Github Pages](https://tacky0612.github.io/DynamicBingo/)
  * * *  
