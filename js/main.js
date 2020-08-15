@@ -12,7 +12,7 @@ function splitArray(array, part) {
     return tmp;
 }
 
-function createBingoArray(number) {
+function createBingoArray(number,max) {
     let source = [];
     const buttonNumber = number * number;
     for (let i = 1; i <= buttonNumber; i++) {
@@ -21,7 +21,7 @@ function createBingoArray(number) {
             continue
         }
         while (true) {
-            let tmp = intRandom(1, MAX_BINGO_COUNT);
+            let tmp = intRandom(1, max);
             if (!source.includes(tmp)) {
                 source.push(tmp);
                 break;
@@ -48,6 +48,9 @@ function renderBingo(number, source) {
 
         document.querySelector("tbody").appendChild(tr);
     }
+
+    $("#bingo-settings").hide();
+    $("table").show();
 }
 
 function checkBingo() {
@@ -85,22 +88,27 @@ $("#bingo-range").on("input", () => {
     $("#output").text(input);
 });
 
-const number = 5;
-const MAX_BINGO_COUNT = number * number * 2;
+$("#bingo-create").on("click", () => {
+    let number = parseInt($("#output").text());
+    const max = number * number * 2;
+    let source = createBingoArray(number,max);
+    window.number = number;
+    isNotBingoYet = true;
+    
+    renderBingo(number, source);
+    
+    $("td").on("click", (event) => {
+        let target = event.target.classList[0];
+        let color = $("." + target).css("background-color");
+        if (color === "rgb(127, 255, 212)") {
+            $("." + target).css("background-color", "pink");
+        } else if (color === "rgb(255, 192, 203)") {
+            $("." + target).css("background-color", "aquamarine");
+        }
+    
+        checkBingo();
+    });
+});
+
 let isNotBingoYet = true;
 
-let source = createBingoArray(number);
-renderBingo(number, source);
-console.table(source);
-
-$("td").on("click", (event) => {
-    let target = event.target.classList[0];
-    let color = $("." + target).css("background-color");
-    if (color === "rgb(127, 255, 212)") {
-        $("." + target).css("background-color", "pink");
-    } else if (color === "rgb(255, 192, 203)") {
-        $("." + target).css("background-color", "aquamarine");
-    }
-
-    checkBingo();
-});

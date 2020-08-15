@@ -15,16 +15,28 @@ body {
 
 table {
   margin: auto;
+  border: 2px solid #fff;
 }
 
 th,
 td {
   cursor: pointer;
+  border-collapse: collapse;
+  border: 2px dashed #fff;
   font-size: 30px;
   font-weight: bold;
   background-color: aquamarine;
   width: 100px;
   height: 100px;
   text-align: center;
+  vertical-align: middle;
+}
+
+#bingo-range {
+  width: 150px;
+}
+
+#bingo-create {
+  width: 200px;
 }
 /*# sourceMappingURL=styles.css.map */

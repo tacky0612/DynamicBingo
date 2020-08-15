@@ -4,16 +4,22 @@
 <head>
     <meta charset="utf-8">
     <title>Bingo</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>
+    <header>
+        <h1 class="title">Dynamic BINGO</h1>
+    </header>
     <!-- TODO -->
-    <!-- <input id="bingo-range" type="range" value="5" min="3" max="11" step="2">
-    <output id="output">5</output> -->
-
+    <div id="bingo-settings">
+        <input id="bingo-range" type="range" value="5" min="3" max="11" step="2">
+        <output id="output">5</output>
+        <button id="bingo-create">ビンゴシート作成</button>
+    </div>
     <div id="main-inner">
-        <table>
+        <table style="display: none;">
             <thead>
                 <tr>
                     <td id="bingo-head" colspan="5">BINGO</td>
@@ -23,6 +29,9 @@
             </tbody>
         </table>
     </div>
+    <footer>
+        <p>Create by <a href="https://github.com/tacky0612" target="_blank">@tacky0612</a></p>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="js/main.js"></script>
 </body>
