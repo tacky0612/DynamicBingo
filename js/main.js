@@ -51,16 +51,15 @@ function renderBingo(number, source) {
 }
 
 function checkBingo() {
+    let rowCount = new Array(number).fill(0);
     let colCount = new Array(number).fill(0);
-    let rowCount = 0;
-    let slashCount = 0
+    let slashCount = 0;
     let backslashCount = 0
     for (let row = 0; row < number; row++) {
-        rowCount = 0;
         for (let col = 0; col < number; col++) {
             let color = $("." + `${row}-${col}`).css("background-color");
             if (color === "rgb(255, 192, 203)" || color === "rgb(255, 150, 150)") {
-                rowCount++;
+                rowCount[row]++;
                 colCount[col]++;
                 if (row === col) {
                     slashCount++;
@@ -72,10 +71,13 @@ function checkBingo() {
             }
         }
     }
-    if (rowCount === number || colCount.includes(number) || slashCount === number || backslashCount === number) {
-        alert("BINGO!!");
+
+    if (rowCount.includes(number) || colCount.includes(number) || slashCount === number || backslashCount === number) {
+        if(isNotBingoYet){
+            alert("BINGO!!");
+            isNotBingoYet = false;
+        }
     }
-    console.log(colCount);
 }
 
 $("#bingo-range").on("input", () => {
@@ -85,6 +87,7 @@ $("#bingo-range").on("input", () => {
 
 const number = 5;
 const MAX_BINGO_COUNT = number * number * 2;
+let isNotBingoYet = true;
 
 let source = createBingoArray(number);
 renderBingo(number, source);
