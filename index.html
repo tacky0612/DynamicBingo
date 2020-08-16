@@ -6,6 +6,7 @@
     <title>Dynamic Bingo</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 </head>
 
 <body>
@@ -15,19 +16,25 @@
     <!-- TODO -->
     <div id="main-inner">
         <div id="bingo-settings">
-            <h2>BINGOの設定</h2>
-            <div class="setting">
-                <div class="setting-text">BINGOの大きさ
-                    <output id="output" class="output">5</output>×<output class="output">5</output>
-                </div>
-                <input id="bingo-range" class="input-range" type="range" value="5" min="3" max="11" step="2">
-            </div>
-            <div class="setting">
-                <div class="setting-text">BINGOの範囲 1 ~
-                    <output id="number-range-output">24</output>
-                </div>
-                <input id="number-range" class="input-range" type="range" value="24" min="24" max="96" step="1">
-            </div>
+            <dl id="bingo-settings--accordion-menu">
+                <dt>
+                    <h2>BINGOの設定</h2>
+                </dt>
+                <dd>
+                    <div class="setting">
+                        <div class="setting-text">BINGOの大きさ
+                            <output id="output" class="output">5</output>×<output class="output">5</output>
+                        </div>
+                        <input id="bingo-range" class="input-range" type="range" value="5" min="3" max="11" step="2">
+                    </div>
+                    <div class="setting">
+                        <div class="setting-text">BINGOの範囲 1 ~
+                            <output id="number-range-output">24</output>
+                        </div>
+                        <input id="number-range" class="input-range" type="range" value="24" min="24" max="96" step="1">
+                    </div>
+                </dd>
+            </dl>
             <button id="bingo-create">BINGOシート作成</button>
         </div>
 
@@ -42,10 +49,21 @@
         </table>
     </div>
     <footer>
+        <div class="sns-links">
+            <p class="github"><a href="https://github.com/tacky0612/DynamicBingo/" target="_blank"><i
+                        class="fab fa-github"></i></a></p>
+            <p class="twitter"><a href="https://twitter.com/tacky0612" target="_blank"><i
+                        class="fab fa-twitter"></i></a></p>
+        </div>
         <p>Create by <a href="https://github.com/tacky0612" target="_blank">@tacky0612</a></p>
-        <p><a href="https://github.com/tacky0612/DynamicBingo/" target="_blank">Github</a></p>
-        <p><a href="https://twitter.com/tacky0612" target="_blank">Twitter</a></p>
     </footer>
+    <div class="popup" id="popup">
+        <div class="popup-inner">
+            <div class="close-btn" id="js-close-btn"><i class="fas fa-times"></i></div>
+            <h1>BINGO!!</h1>
+        </div>
+        <div class="black-background" id="js-black-bg"></div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="js/main.js"></script>
 </body>

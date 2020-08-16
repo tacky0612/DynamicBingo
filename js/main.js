@@ -77,7 +77,7 @@ function checkBingo() {
 
     if (rowCount.includes(number) || colCount.includes(number) || slashCount === number || backslashCount === number) {
         if (isNotBingoYet) {
-            alert("BINGO!!");
+            $("#popup").show();
             isNotBingoYet = false;
         }
     }
@@ -122,5 +122,13 @@ $("#bingo-create").on("click", () => {
     });
 });
 
-let isNotBingoYet = true;
+$("#bingo-settings--accordion-menu dt").on("click", (event) => {
+    let target = event.target.parentElement.parentElement.children[1];
+    $(target).slideToggle(100);
+});
 
+$("#popup").on("click", () => {
+    $("#popup").fadeOut(500);
+});
+
+let isNotBingoYet = true;
