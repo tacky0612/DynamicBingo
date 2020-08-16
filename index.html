@@ -13,12 +13,17 @@
         <h1 class="title">Dynamic BINGO</h1>
     </header>
     <!-- TODO -->
-    <div id="bingo-settings">
-        <input id="bingo-range" type="range" value="5" min="3" max="11" step="2">
-        <output id="output">5</output>
-        <button id="bingo-create">ビンゴシート作成</button>
-    </div>
     <div id="main-inner">
+        <div id="bingo-settings">
+            <div class="setting">
+                <div class="setting-text">ビンゴの大きさ
+                    <output id="output" class="output">5</output>×<output class="output">5</output>
+                </div>
+                <input id="bingo-range" class="input-range" type="range" value="5" min="3" max="11" step="2">
+            </div>
+            <button id="bingo-create">ビンゴシート作成</button>
+        </div>
+
         <table style="display: none;">
             <thead>
                 <tr>
@@ -31,6 +36,7 @@
     </div>
     <footer>
         <p>Create by <a href="https://github.com/tacky0612" target="_blank">@tacky0612</a></p>
+        <p><a href="https://github.com/tacky0612/DynamicBingo/" target="_blank">Github</a></p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="js/main.js"></script>

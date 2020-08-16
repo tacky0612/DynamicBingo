@@ -85,7 +85,7 @@ function checkBingo() {
 
 $("#bingo-range").on("input", () => {
     let input = $("#bingo-range").val();
-    $("#output").text(input);
+    $(".output").text(input);
 });
 
 $("#bingo-create").on("click", () => {

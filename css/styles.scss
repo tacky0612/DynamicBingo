@@ -1,13 +1,106 @@
+$main-color: aquamarine;
+
 body {
     font-family: "Courier New", Courier, monospace;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    min-width: 600px;
 }
 
 ::selection {
     background: none;
 }
 
+header {
+    display: flex;
+    font-size: 64px;
+    font-weight: bold;
+    background-color: $main-color;
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+    h1 {
+        margin: auto;
+    }
+}
+
+#bingo {
+    &-settings {
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+        width: 60%;
+
+        .setting {
+            display: flex;
+            width: 80%;
+            margin: 30px;
+            #bingo-range {
+                margin-left: auto;
+            }
+            &-text {
+                margin: auto;
+            }
+        }
+    }
+    &-create {
+        width: 200px;
+        margin: auto;
+    }
+}
+
+.input-range[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #bbbbbb;
+    height: 9px;
+    width: 50%;
+    border-radius: 6px;
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        position: relative;
+        border: 2px solid rgb(0, 0, 0);
+        width: 22px;
+        height: 22px;
+        display: block;
+        background-color: $main-color;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+    }
+
+    &:active::-webkit-slider-thumb {
+        box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.6);
+        transition: 0.2s;
+    }
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    background: $main-color;
+    transition: 0.4s;
+    margin: 20px;   
+    &:hover {
+        background: $main-color;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32); /*影*/
+    }
+}
+
 #main-inner {
     display: flex;
+    justify-content: center;
     width: 90%;
     margin: auto;
     min-width: 700px;
@@ -15,28 +108,31 @@ body {
 
 table {
     margin: auto;
-    border:2px solid #fff;
+    border: 2px solid #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.32); /*影*/
+    
 }
 
 th,
 td {
     cursor: pointer;
     border-collapse: collapse;
-    border:2px dashed #fff;
+    border: 2px dashed #fff;
     font-size: 30px;
     font-weight: bold;
-    background-color: aquamarine;
+    background-color: $main-color;
     width: 100px;
     height: 100px;
     text-align: center;
     vertical-align: middle;
 }
 
-#bingo{
-    &-range{
-        width: 150px;
-    }
-    &-create{
-        width: 200px;
+footer {
+    text-align: right;
+    background-color: #bbbbbb;
+    padding: 30px;
+    margin-top: 50px;
+    p {
+        margin: 5px 0;
     }
 }

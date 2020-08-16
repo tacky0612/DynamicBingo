@@ -1,13 +1,106 @@
+@charset "UTF-8";
 body {
   font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  min-width: 600px;
 }
 
 ::selection {
   background: none;
 }
 
+header {
+  display: flex;
+  font-size: 64px;
+  font-weight: bold;
+  background-color: aquamarine;
+  padding: 30px;
+  margin-bottom: 50px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+}
+
+header h1 {
+  margin: auto;
+}
+
+#bingo-settings {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  width: 60%;
+}
+
+#bingo-settings .setting {
+  display: flex;
+  width: 80%;
+  margin: 30px;
+}
+
+#bingo-settings .setting #bingo-range {
+  margin-left: auto;
+}
+
+#bingo-settings .setting-text {
+  margin: auto;
+}
+
+#bingo-create {
+  width: 200px;
+  margin: auto;
+}
+
+.input-range[type="range"] {
+  appearance: none;
+  background-color: #bbbbbb;
+  height: 9px;
+  width: 50%;
+  border-radius: 6px;
+}
+
+.input-range[type="range"]:focus, .input-range[type="range"]:active {
+  outline: none;
+}
+
+.input-range[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid black;
+  width: 22px;
+  height: 22px;
+  display: block;
+  background-color: aquamarine;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+.input-range[type="range"]:active::-webkit-slider-thumb {
+  box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.6);
+  transition: 0.2s;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-decoration: none;
+  background: aquamarine;
+  transition: 0.4s;
+  margin: 20px;
+}
+
+button:hover {
+  background: aquamarine;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+  /*影*/
+}
+
 #main-inner {
   display: flex;
+  justify-content: center;
   width: 90%;
   margin: auto;
   min-width: 700px;
@@ -16,6 +109,8 @@ body {
 table {
   margin: auto;
   border: 2px solid #fff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.32);
+  /*影*/
 }
 
 th,
@@ -32,11 +127,14 @@ td {
   vertical-align: middle;
 }
 
-#bingo-range {
-  width: 150px;
+footer {
+  text-align: right;
+  background-color: #bbbbbb;
+  padding: 30px;
+  margin-top: 50px;
 }
 
-#bingo-create {
-  width: 200px;
+footer p {
+  margin: 5px 0;
 }
 /*# sourceMappingURL=styles.css.map */
