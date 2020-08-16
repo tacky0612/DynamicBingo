@@ -12,7 +12,7 @@ function splitArray(array, part) {
     return tmp;
 }
 
-function createBingoArray(number,max) {
+function createBingoArray(number, max) {
     let source = [];
     const buttonNumber = number * number;
     for (let i = 1; i <= buttonNumber; i++) {
@@ -76,7 +76,7 @@ function checkBingo() {
     }
 
     if (rowCount.includes(number) || colCount.includes(number) || slashCount === number || backslashCount === number) {
-        if(isNotBingoYet){
+        if (isNotBingoYet) {
             alert("BINGO!!");
             isNotBingoYet = false;
         }
@@ -86,17 +86,29 @@ function checkBingo() {
 $("#bingo-range").on("input", () => {
     let input = $("#bingo-range").val();
     $(".output").text(input);
+    $("#number-range").attr("min", input * input - 1);
+    $("#number-range").attr("max", (input * input - 1) * 4);
+    $("#number-range").attr("value", input * input - 1);
+
+    $("#number-range-output").text(input * input - 1);
+    input = $("#number-range").val();
+    $("#number-range-output").text(input);
+});
+
+$("#number-range").on("input", () => {
+    let input = $("#number-range").val();
+    $("#number-range-output").text(input);
 });
 
 $("#bingo-create").on("click", () => {
     let number = parseInt($("#output").text());
-    const max = number * number * 2;
-    let source = createBingoArray(number,max);
+    const max = parseInt($("#number-range-output").text());
+    let source = createBingoArray(number, max);
     window.number = number;
     isNotBingoYet = true;
-    
+
     renderBingo(number, source);
-    
+
     $("td").on("click", (event) => {
         let target = event.target.classList[0];
         let color = $("." + target).css("background-color");
@@ -105,7 +117,7 @@ $("#bingo-create").on("click", () => {
         } else if (color === "rgb(255, 192, 203)") {
             $("." + target).css("background-color", "aquamarine");
         }
-    
+
         checkBingo();
     });
 });
