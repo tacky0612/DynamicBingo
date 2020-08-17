@@ -29,37 +29,77 @@ header {
     &-settings {
         display: flex;
         flex-flow: column;
-        text-align: center;
         width: 60%;
-        background-color: #dddddd;
+        // background-color: #eeeeee;
         border-radius: 20px;
-        h2 {
-            font-size: 30px;
-            font-weight: bold;
-            margin: 20px;
-            padding: 20px;
-            background-color: $main-color;
-            border: solid 2px;
-            border-radius: 10px;
-        }
+        border: #000 solid 2px;
+
         .setting {
             display: flex;
             width: 80%;
             padding: 30px;
             margin: 0 auto;
-            background-color: #fff;
             #bingo-range {
                 margin-left: auto;
             }
             &-text {
-                margin: auto;
+                margin-right: auto;
+            }
+            ul {
+                list-style: square; /* アイコンの種類指定 */
+            }
+            li {
+                margin: 4px 0;
             }
         }
         &--accordion-menu {
-            dt {
+            .bingo-settings--accordion-menu--text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 cursor: pointer;
+                font-size: 30px;
+                font-weight: bold;
+                margin: 20px 20px 0px 20px;
+                padding: 20px;
+                background-color: $main-color;
+                border: solid 2px;
+                border-radius: 10px;
+                span {
+                    margin-right: 30px;
+                    position: relative;
+                    transition: 500ms;
+                    &::before {
+                        top: -6px;
+                        right: -6px;
+                        content: "";
+                        position: absolute;
+                        width: 8px;
+                        height: 8px;
+                        border-top: solid 2px #000;
+                        border-right: solid 2px #000;
+                        transform-origin: center center;
+                        -webkit-transform: rotate(135deg);
+                        transform: rotate(135deg);
+                    }
+                }
+                .open {
+                    transform-origin: center center;
+                    transform: rotate(-180deg);
+                    transition: 500ms;
+                }
+                p {
+                    margin-left: auto;
+                    margin-right: 10px;
+                    text-align: center;
+                    font-size: small;
+                    font-weight: normal;
+                }
+                &:hover {
+                    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+                }
             }
-            dd {
+            .hide-menu {
                 display: none;
             }
         }
@@ -68,7 +108,7 @@ header {
             padding: 10px 20px;
             text-decoration: none;
             background: $main-color;
-            margin: 20px auto;
+            margin: 40px auto 20px auto;
             border-radius: 10px;
             &:hover {
                 box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32); /*影*/
@@ -151,15 +191,13 @@ footer {
     .sns-links {
         margin-left: auto;
         display: flex;
-        
-
-        .github a{
+        .github a {
             margin: 10px;
             text-decoration: none;
-            color: #252A2E;
+            color: #252a2e;
             font-size: 40px;
         }
-        .twitter a{
+        .twitter a {
             margin: 10px;
             text-decoration: none;
             color: #55acee;

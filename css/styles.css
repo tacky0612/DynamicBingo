@@ -28,20 +28,9 @@ header h1 {
 #bingo-settings {
   display: flex;
   flex-flow: column;
-  text-align: center;
   width: 60%;
-  background-color: #dddddd;
   border-radius: 20px;
-}
-
-#bingo-settings h2 {
-  font-size: 30px;
-  font-weight: bold;
-  margin: 20px;
-  padding: 20px;
-  background-color: aquamarine;
-  border: solid 2px;
-  border-radius: 10px;
+  border: #000 solid 2px;
 }
 
 #bingo-settings .setting {
@@ -49,7 +38,6 @@ header h1 {
   width: 80%;
   padding: 30px;
   margin: 0 auto;
-  background-color: #fff;
 }
 
 #bingo-settings .setting #bingo-range {
@@ -57,14 +45,70 @@ header h1 {
 }
 
 #bingo-settings .setting-text {
-  margin: auto;
+  margin-right: auto;
 }
 
-#bingo-settings--accordion-menu dt {
+#bingo-settings .setting ul {
+  list-style: square;
+  /* アイコンの種類指定 */
+}
+
+#bingo-settings .setting li {
+  margin: 4px 0;
+}
+
+#bingo-settings--accordion-menu .bingo-settings--accordion-menu--text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px 20px 0px 20px;
+  padding: 20px;
+  background-color: aquamarine;
+  border: solid 2px;
+  border-radius: 10px;
 }
 
-#bingo-settings--accordion-menu dd {
+#bingo-settings--accordion-menu .bingo-settings--accordion-menu--text span {
+  margin-right: 30px;
+  position: relative;
+  transition: 500ms;
+}
+
+#bingo-settings--accordion-menu .bingo-settings--accordion-menu--text span::before {
+  top: -6px;
+  right: -6px;
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-top: solid 2px #000;
+  border-right: solid 2px #000;
+  transform-origin: center center;
+  transform: rotate(135deg);
+}
+
+#bingo-settings--accordion-menu .bingo-settings--accordion-menu--text .open {
+  transform-origin: center center;
+  transform: rotate(-180deg);
+  transition: 500ms;
+}
+
+#bingo-settings--accordion-menu .bingo-settings--accordion-menu--text p {
+  margin-left: auto;
+  margin-right: 10px;
+  text-align: center;
+  font-size: small;
+  font-weight: normal;
+}
+
+#bingo-settings--accordion-menu .bingo-settings--accordion-menu--text:hover {
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+}
+
+#bingo-settings--accordion-menu .hide-menu {
   display: none;
 }
 
@@ -73,7 +117,7 @@ header h1 {
   padding: 10px 20px;
   text-decoration: none;
   background: aquamarine;
-  margin: 20px auto;
+  margin: 40px auto 20px auto;
   border-radius: 10px;
 }
 
@@ -162,7 +206,7 @@ footer .sns-links {
 footer .sns-links .github a {
   margin: 10px;
   text-decoration: none;
-  color: #252A2E;
+  color: #252a2e;
   font-size: 40px;
 }
 

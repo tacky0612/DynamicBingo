@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link rel="icon" href="image/favicon_io/favicon.ico">
 </head>
 
 <body>
@@ -17,10 +18,28 @@
     <div id="main-inner">
         <div id="bingo-settings">
             <dl id="bingo-settings--accordion-menu">
-                <dt>
+                <div class="bingo-settings--accordion-menu--text">
+                    <span class="open"></span>
+                    <h2>Dynamic BINGOの説明</h2>
+                    <p></p>
+                </div>
+                <div class="hide-menu" style="display: block;">
+                    <div class="setting">
+                        <ul>
+                            <li>動的にマスの数を変更できるBINGOシートです</li>
+                            <li>BINGOシートの大きさと取りうる整数値の範囲を下のメニューから設定できます</li>
+                            <li>BINGOシートは指定した範囲内の整数値を重複なく各マスに配置されます</li>
+                            <li>BINGOが完成するとBINGOモーダルが表示されます</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bingo-settings--accordion-menu--text">
+                    <span></span>
                     <h2>BINGOの設定</h2>
-                </dt>
-                <dd>
+                    <p>初期値:BINGOの大きさ5×5　BINGOの範囲1~50</p>
+                </div>
+                <div class="hide-menu">
                     <div class="setting">
                         <div class="setting-text">BINGOの大きさ
                             <output id="output" class="output">5</output>×<output class="output">5</output>
@@ -29,11 +48,11 @@
                     </div>
                     <div class="setting">
                         <div class="setting-text">BINGOの範囲 1 ~
-                            <output id="number-range-output">24</output>
+                            <output id="number-range-output">50</output>
                         </div>
-                        <input id="number-range" class="input-range" type="range" value="24" min="24" max="96" step="1">
+                        <input id="number-range" class="input-range" type="range" value="50" min="24" max="96" step="1">
                     </div>
-                </dd>
+                </div>
             </dl>
             <button id="bingo-create">BINGOシート作成</button>
         </div>

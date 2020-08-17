@@ -122,9 +122,9 @@ $("#bingo-create").on("click", () => {
     });
 });
 
-$("#bingo-settings--accordion-menu dt").on("click", (event) => {
-    let target = event.target.parentElement.parentElement.children[1];
-    $(target).slideToggle(100);
+$(".bingo-settings--accordion-menu--text").on("click", function () {
+    $(this).next().slideToggle();
+    $("span", this).toggleClass('open');
 });
 
 $("#popup").on("click", () => {
