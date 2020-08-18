@@ -4,7 +4,19 @@ body {
   display: flex;
   flex-flow: column;
   min-height: 100vh;
-  min-width: 600px;
+}
+
+@media (min-width: 480px) {
+  body {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    min-width: 600px;
+    font-size: medium;
+  }
 }
 
 ::selection {
@@ -13,12 +25,24 @@ body {
 
 header {
   display: flex;
-  font-size: 64px;
   font-weight: bold;
   background-color: aquamarine;
-  padding: 30px;
   margin-bottom: 50px;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+}
+
+@media (min-width: 480px) {
+  header {
+    font-size: 100px;
+    padding: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    font-size: 50px;
+    padding: 30px;
+  }
 }
 
 header h1 {
@@ -28,16 +52,50 @@ header h1 {
 #bingo-settings {
   display: flex;
   flex-flow: column;
-  width: 60%;
   border-radius: 20px;
   border: #000 solid 2px;
 }
 
+@media (min-width: 480px) {
+  #bingo-settings {
+    width: 95%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #bingo-settings {
+    width: 60%;
+  }
+}
+
 #bingo-settings .setting {
   display: flex;
-  width: 80%;
   padding: 30px;
   margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+  #bingo-settings .setting {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #bingo-settings .setting {
+    width: 80%;
+  }
+}
+
+@media (min-width: 480px) {
+  #bingo-settings .setting {
+    flex-flow: column;
+  }
+}
+
+@media (min-width: 1024px) {
+  #bingo-settings .setting {
+    flex-flow: row;
+  }
 }
 
 #bingo-settings .setting #bingo-range {
@@ -48,13 +106,32 @@ header h1 {
   margin-right: auto;
 }
 
-#bingo-settings .setting ul {
-  list-style: square;
-  /* アイコンの種類指定 */
+@media (min-width: 480px) {
+  #bingo-settings .setting-text {
+    font-size: 40px;
+  }
 }
 
-#bingo-settings .setting li {
-  margin: 4px 0;
+@media (min-width: 1024px) {
+  #bingo-settings .setting-text {
+    font-size: medium;
+  }
+}
+
+#bingo-settings .setting ul {
+  list-style: square;
+}
+
+@media (min-width: 480px) {
+  #bingo-settings .setting li {
+    margin: 8px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  #bingo-settings .setting li {
+    margin: 4px 0;
+  }
 }
 
 #bingo-settings--accordion-menu .bingo-settings--accordion-menu--text {
@@ -62,13 +139,25 @@ header h1 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-size: 30px;
   font-weight: bold;
-  margin: 20px 20px 0px 20px;
-  padding: 20px;
   background-color: aquamarine;
   border: solid 2px;
   border-radius: 10px;
+  margin: 20px 20px 0px 20px;
+}
+
+@media (min-width: 480px) {
+  #bingo-settings--accordion-menu .bingo-settings--accordion-menu--text {
+    font-size: 60px;
+    padding: 50px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #bingo-settings--accordion-menu .bingo-settings--accordion-menu--text {
+    font-size: 30px;
+    padding: 20px;
+  }
 }
 
 #bingo-settings--accordion-menu .bingo-settings--accordion-menu--text span {
@@ -82,12 +171,26 @@ header h1 {
   right: -6px;
   content: "";
   position: absolute;
-  width: 8px;
-  height: 8px;
-  border-top: solid 2px #000;
-  border-right: solid 2px #000;
   transform-origin: center center;
   transform: rotate(135deg);
+}
+
+@media (min-width: 480px) {
+  #bingo-settings--accordion-menu .bingo-settings--accordion-menu--text span::before {
+    width: 16px;
+    height: 16px;
+    border-top: solid 4px #000;
+    border-right: solid 4px #000;
+  }
+}
+
+@media (min-width: 1024px) {
+  #bingo-settings--accordion-menu .bingo-settings--accordion-menu--text span::before {
+    width: 8px;
+    height: 8px;
+    border-top: solid 2px #000;
+    border-right: solid 2px #000;
+  }
 }
 
 #bingo-settings--accordion-menu .bingo-settings--accordion-menu--text .open {
@@ -104,6 +207,18 @@ header h1 {
   font-weight: normal;
 }
 
+@media (min-width: 480px) {
+  #bingo-settings--accordion-menu .bingo-settings--accordion-menu--text p {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 1024px) {
+  #bingo-settings--accordion-menu .bingo-settings--accordion-menu--text p {
+    visibility: visible;
+  }
+}
+
 #bingo-settings--accordion-menu .bingo-settings--accordion-menu--text:hover {
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
 }
@@ -114,11 +229,25 @@ header h1 {
 
 #bingo-settings button {
   font-weight: bold;
-  padding: 10px 20px;
   text-decoration: none;
   background: aquamarine;
-  margin: 40px auto 20px auto;
   border-radius: 10px;
+}
+
+@media (min-width: 480px) {
+  #bingo-settings button {
+    font-size: xx-large;
+    padding: 20px 40px;
+    margin: 60px auto 30px auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  #bingo-settings button {
+    font-size: medium;
+    padding: 10px 20px;
+    margin: 40px auto 20px auto;
+  }
 }
 
 #bingo-settings button:hover {
@@ -129,9 +258,25 @@ header h1 {
 .input-range[type="range"] {
   appearance: none;
   background-color: #bbbbbb;
-  height: 9px;
-  width: 50%;
-  border-radius: 6px;
+}
+
+@media (min-width: 480px) {
+  .input-range[type="range"] {
+    margin: 50px auto 20px auto;
+    height: 18px;
+    width: 100%;
+    border-radius: 6px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .input-range[type="range"] {
+    margin: 0;
+    margin-left: auto;
+    height: 9px;
+    width: 50%;
+    border-radius: 6px;
+  }
 }
 
 .input-range[type="range"]:focus, .input-range[type="range"]:active {
@@ -142,13 +287,26 @@ header h1 {
   appearance: none;
   cursor: pointer;
   position: relative;
-  border: 2px solid black;
-  width: 22px;
-  height: 22px;
   display: block;
   background-color: aquamarine;
   border-radius: 50%;
   -webkit-border-radius: 50%;
+}
+
+@media (min-width: 480px) {
+  .input-range[type="range"]::-webkit-slider-thumb {
+    border: 5px solid black;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .input-range[type="range"]::-webkit-slider-thumb {
+    border: 2px solid black;
+    width: 22px;
+    height: 22px;
+  }
 }
 
 .input-range[type="range"]:active::-webkit-slider-thumb {
@@ -159,38 +317,89 @@ header h1 {
 #main-inner {
   display: flex;
   justify-content: center;
-  width: 90%;
   margin: auto;
-  min-width: 700px;
+}
+
+@media (min-width: 480px) {
+  #main-inner {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #main-inner {
+    min-width: 700px;
+    width: 90%;
+  }
 }
 
 table {
-  margin: auto;
-  border: 2px solid #fff;
+  table-layout: fixed;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.32);
   /*影*/
+}
+
+@media (min-width: 480px) {
+  table {
+    border: 4px solid #fff;
+    width: 95%;
+  }
+}
+
+@media (min-width: 1024px) {
+  table {
+    border: 2px solid #fff;
+    width: auto;
+  }
 }
 
 th,
 td {
   cursor: pointer;
   border-collapse: collapse;
-  border: 2px dashed #fff;
-  font-size: 30px;
   font-weight: bold;
   background-color: aquamarine;
-  width: 100px;
-  height: 100px;
   text-align: center;
   vertical-align: middle;
+}
+
+@media (min-width: 480px) {
+  th,
+  td {
+    font-size: 35px;
+    height: 150px;
+    border: 4px dashed #fff;
+  }
+}
+
+@media (min-width: 1024px) {
+  th,
+  td {
+    font-size: 30px;
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #fff;
+  }
 }
 
 footer {
   display: flex;
   flex-flow: column;
   background-color: #dddddd;
-  padding: 20px;
-  margin-top: 50px;
+}
+
+@media (min-width: 480px) {
+  footer {
+    padding: 40px;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 1024px) {
+  footer {
+    padding: 20px;
+    margin-top: 50px;
+  }
 }
 
 footer p {
