@@ -127,7 +127,11 @@ $(".bingo-settings--accordion-menu--text").on("click", function () {
     $("span", this).toggleClass('open');
 });
 
-$("#popup").on("click", () => {
+$("#js-close-btn").on("click", () => {
+    $("#popup").fadeOut(500);
+});
+
+$(".black-background").on("click", () => {
     $("#popup").fadeOut(500);
 });
 

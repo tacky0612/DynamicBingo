@@ -350,6 +350,23 @@ footer {
         padding: 50px;
         background-color: #fff;
         z-index: 2;
+        display: flex;
+        h2 {
+            margin: auto;
+            font-weight: 900;
+            letter-spacing: 15px;
+            color: transparent;
+            background: repeating-linear-gradient(45deg, $main-color 0.1em 0.2em, pink 0.1em 0.3em);
+            -webkit-background-clip: text;
+            -webkit-text-stroke: 2px #252525;
+            text-stroke: 2px #252525;
+            @include sp {
+                font-size: 90px;
+            }
+            @include pc {
+                font-size: 80px;
+            }
+        }
     }
     .close-btn {
         position: absolute;
